@@ -1,0 +1,93 @@
+﻿'Author :- Prashant Pukale
+'USEUNIT CommonUtil
+'USEUNIT GlobalVariables
+'USEUNIT ObjectRepositoryUtil
+'USEUNIT BusinessFunctions
+
+
+'PerformAction(strTestCaseID, strStepNo, strStepDescription, strObjectName, strOperation, strInputValue)
+Function PerformAction(strTestCaseID, strStepNo, strStepDescription, strObjectName, strOperation, strInputValue)
+
+  If trim(strObjectName) <> Empty then
+    Set testObject = ConstructObject(strObjectName)
+  End If
+
+  Select Case strOperation
+    Case "LaunchBrowser"
+        result = LaunchBrowser(strInputValue)
+
+      Case "VerifyTitle"
+        result = VerifyTitle(strInputValue)
+
+'Author :- Atul Sathe
+'Created to verify website content with input file       
+      Case "VerifyText"
+        result = VerifyText(testObject, strInputValue)
+
+'Author :- Atul Sathe
+'Created to verify website content with input file using Html tag 
+        
+      Case "VerifyFileTxt"
+        result = VerifyFileTxt(strInputValue)
+        
+      Case "VerifyImg"
+        result = VerifyImg(testObject, strInputValue)
+        
+      Case "CloseBrowser"
+        result = CloseBrowser()
+        
+       Case "RefreshBrowser"
+        result = RefreshBrowser()
+          
+      Case "Click"
+        result = Click(testObject)
+          
+      Case "FindingObjects"
+        result = FindingObjects(strInputValue)
+ 
+      Case "SetText"
+        result = SetText(testObject, strInputValue)
+      
+      'Case "VerifyAltText"
+        'result = VerifyAltText(testObject, strInputValue)
+      
+      Case "IsLoggedIn"
+        result = IsLoggedIn(testObject)
+      
+      Case "Wait"
+        If(strInputValue = "MIN_TIME") Then
+            MsgBox MIN_WAIT_TIME
+            aqUtils.Delay MIN_WAIT_TIME
+          elseIf(strInputValue = "MAX_TIME") Then
+            aqUtils.Delay MAX_WAIT_TIME
+          else 
+            aqUtils.Delay cint(strInputValue)
+        End If
+      
+      Case "BrowserBack"
+        result = BrowserBack()
+      
+      Case "VerifyImage"
+        result = VerifyImage(testObject, strInputValue)
+        
+      Case "BrowserNav"
+        result = BrowserNav(strInputValue)
+		
+		
+      Case "VerifyLogIn_HorizontalMenu"   
+          result = VerifyLogIn_HorizontalMenu() 
+
+      Case "VerifyProductGuides_HorizontalMenu"   
+          result = VerifyProductGuides_HorizontalMenu() 
+
+       Case "VerifyMeetIQOS_HorizontalMenu"   
+          result = VerifyMeetIQOS_HorizontalMenu() 
+
+      Case Else
+        Log.Message "Invalid Operation please check test case sheet .....!"
+        Result = False
+  End Select
+ 
+  PerformAction = result
+
+End Function

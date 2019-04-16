@@ -1,0 +1,8 @@
+#Author:- Prashant Pukale
+# this file contains the variable info for xxxxx project [Automation_testcomplete]
+BROWSERNAME=Chrome
+ApplicationName=HDFC
+ModuleToTest=Banking
+ServiceName=hdfc.com.in
+Click - pass objectname
+ClickWithText("Payment") - pass propertyvalue 

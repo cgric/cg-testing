@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="message 5">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.6920671991"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="message" type="S" value="Actual Image"/>
+			<Prp name="type" type="I" value="4"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="5"/>
+			<Prp name="line no" type="I" value="187"/>
+			<Prp name="picture" type="S" value="Picture2.png"/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Node name="message 11">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.6923424074"/>
+			<Prp name="unit id" type="I" value="3"/>
+			<Prp name="pictype" type="I" value="2"/>
+			<Prp name="stack end" type="I" value="3"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value="Possible reasons:&#xA; - An error or warning occurred during the test run. See the preceding log entries to locate and identify the error.&#xA; - The test run was stopped manually.&#xA; - The test run was terminated as a result of the Runner.Halt method call."/>
+			<Prp name="message" type="S" value="The script execution was interrupted."/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="11"/>
+			<Prp name="line no" type="I" value="20"/>
+			<Prp name="stack beginning" type="I" value="3"/>
+			<Prp name="picture" type="S" value="Picture6.png"/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Node name="message 4">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.6920559607"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="message" type="S" value="Expected Image"/>
+			<Prp name="type" type="I" value="4"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="4"/>
+			<Prp name="line no" type="I" value="186"/>
+			<Prp name="picture" type="S" value="Picture1.png"/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Node name="message 1">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.6918090972"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value="&lt;html&gt;&lt;head&gt;&lt;style&gt;td{font-family: Courier New, Consolas, Segoe UI; font-size : 14px;}&lt;/style&gt;&lt;/head&gt;											  &lt;body&gt;											  &lt;table cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;											  &lt;tr&gt;&lt;td&gt;&lt;b&gt;Browser:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;Mozilla Firefox ver.66.0.3 (x64)&lt;/td&gt;&lt;/tr&gt;											  &lt;tr&gt;&lt;td&gt;&lt;b&gt;Executable:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;C:\Program Files\Mozilla Firefox\firefox.exe&lt;/td&gt;&lt;/tr&gt;											  &lt;tr&gt;&lt;td style=&quot;padding-right: 8px;&quot;&gt;&lt;b&gt;Command-line args:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;											  &lt;tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;URL:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;https://uat2-adobe.getiqos.com/secret/setcookie.html&lt;/td&gt;&lt;/tr&gt;											  &lt;tr&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;PID:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;148232&lt;/td&gt;&lt;/tr&gt;											  &lt;/table&gt;&lt;/body&gt;&lt;/html&gt;"/>
+			<Prp name="message" type="S" value="Mozilla Firefox was launched."/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="as html" type="B" value="-1"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="40"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Node name="item 0">
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="260"/>
+			<Prp name="stacktext" type="S" value="VerifyText"/>
+		</Node>
+		<Node name="message 10">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.6922942477"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="pictype" type="I" value="2"/>
+			<Prp name="stack end" type="I" value="2"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="message" type="S" value="Content is not matched, Expected :: SIGN IN TO GETIQOS.COM and the Actual :: SIGN IN TO GETIQOS.COM&#xA;"/>
+			<Prp name="type" type="I" value="3"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="10"/>
+			<Prp name="line no" type="I" value="260"/>
+			<Prp name="stack beginning" type="I" value="0"/>
+			<Prp name="picture" type="S" value="Picture5.png"/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Node name="item 2">
+			<Prp name="unit id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="63"/>
+			<Prp name="stacktext" type="S" value="DriverScript"/>
+		</Node>
+		<Node name="message 8">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.6921196875"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="message" type="S" value="Actual Image"/>
+			<Prp name="type" type="I" value="4"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="8"/>
+			<Prp name="line no" type="I" value="187"/>
+			<Prp name="picture" type="S" value="Picture4.png"/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Node name="message 2">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.6918551273"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value="URL: https://uat2-adobe.getiqos.com/secret/setcookie.html&#xA;&#xA;Sys.Browser(&quot;firefox&quot;)"/>
+			<Prp name="message" type="S" value="Navigating to the https://uat2-adobe.getiqos.com/secret/setcookie.html page."/>
+			<Prp name="type" type="I" value="1"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="2"/>
+			<Prp name="line no" type="I" value="40"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Node name="message 6">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.6920705671"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="message" type="S" value="The compared images are identical"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="6"/>
+			<Prp name="line no" type="I" value="190"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Node name="message 7">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.6921073611"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="message" type="S" value="Expected Image"/>
+			<Prp name="type" type="I" value="4"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="7"/>
+			<Prp name="line no" type="I" value="186"/>
+			<Prp name="picture" type="S" value="Picture3.png"/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Node name="item 3">
+			<Prp name="unit id" type="I" value="3"/>
+			<Prp name="line no" type="I" value="20"/>
+			<Prp name="stacktext" type="S" value=""/>
+		</Node>
+		<Node name="units">
+			<Prp name="unit 2" type="S" value="{756D271E-1158-4BE1-8A8A-FE3EDBDC2212}"/>
+			<Prp name="unit 3" type="S" value="{8F952241-E2F7-4686-8200-275203DFB2D6}"/>
+			<Prp name="unit 0" type="S" value="{95CDC003-1164-4F18-BEEE-DEA28297D393}"/>
+			<Prp name="unit 1" type="S" value="{FC7EF773-10E6-4E56-B34B-5DE6F9D5F107}"/>
+		</Node>
+		<Node name="message 3">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.6918649537"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="message" type="S" value="Created Browser Instance and navigated to URL ::: https://uat2-adobe.getiqos.com/secret/setcookie.html"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="3"/>
+			<Prp name="line no" type="I" value="41"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Node name="message 0">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.6917847454"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="message" type="S" value="which Browser :- Firefox"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="0"/>
+			<Prp name="line no" type="I" value="28"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Node name="stack"/>
+		<Node name="child data"/>
+		<Node name="item 1">
+			<Prp name="unit id" type="I" value="1"/>
+			<Prp name="line no" type="I" value="24"/>
+			<Prp name="stacktext" type="S" value="PerformAction"/>
+		</Node>
+		<Node name="message 9">
+			<Prp name="owner id" type="I" value="-1"/>
+			<Prp name="date" type="D" value="43570.692123044"/>
+			<Prp name="unit id" type="I" value="0"/>
+			<Prp name="pictype" type="I" value="0"/>
+			<Prp name="priority" type="I" value="300"/>
+			<Prp name="remarks" type="S" value=""/>
+			<Prp name="message" type="S" value="The compared images are identical"/>
+			<Prp name="type" type="I" value="0"/>
+			<Prp name="as html" type="B" value="0"/>
+			<Prp name="child index" type="I" value="-1"/>
+			<Prp name="id" type="I" value="9"/>
+			<Prp name="line no" type="I" value="190"/>
+			<Prp name="picture" type="S" value=""/>
+			<Prp name="link" type="S" value=""/>
+		</Node>
+		<Prp name="status" type="I" value="2"/>
+	</Node>
+</Nodes>

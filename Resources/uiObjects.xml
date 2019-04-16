@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+ <!-- Author :- Prashant Pukale-->
+<ObjectRepository>
+		
+		<btnAA_17>
+			<PropertyNames>contentText</PropertyNames>
+			<PropertyValues>I AM UNDER 18</PropertyValues>
+		</btnAA_17>
+		
+		<btnAA>
+			<PropertyNames>contentText||ObjectType</PropertyNames>
+			<PropertyValues>I AM 18+ (ENTER)||Link</PropertyValues>
+		</btnAA>
+		
+		<AVLinkLogin>
+			<PropertyNames>contentText||ObjectType</PropertyNames>
+			<PropertyValues>Sign In||Link</PropertyValues>
+		</AVLinkLogin>
+		
+		<txtUserName>
+			<PropertyNames>ObjectIdentifier</PropertyNames>
+			<PropertyValues>UserName</PropertyValues>
+		</txtUserName>
+
+		<txtPassword>
+			<PropertyNames>ObjectIdentifier</PropertyNames>
+			<PropertyValues>Password</PropertyValues>
+		</txtPassword>
+		
+		<btnLogin>
+			<PropertyNames>ObjectIdentifier</PropertyNames>
+			<PropertyValues>loginBtn</PropertyValues>
+		</btnLogin>
+
+<!-- Sasie created these objects to test Image objects -->
+
+		<HeaderLogo>
+			<PropertyNames>ObjectIdentifier||ObjectType</PropertyNames>
+			<PropertyValues>Nav_IQOS_logo_desktop_png||Image</PropertyValues>
+		</HeaderLogo>
+		
+		<LinkRegister>
+			<PropertyNames>contentText||ObjectType</PropertyNames>
+			<PropertyValues>Register||Link</PropertyValues>
+		</LinkRegister>
+		
+		<GTC_btnRegister>
+			<PropertyNames>idStr||ObjectType</PropertyNames>
+			<PropertyValues>registerUser||Link</PropertyValues>
+		</GTC_btnRegister>
+		
+		<RetailHero_AA>
+			<PropertyNames>ObjectIdentifier||ObjectType</PropertyNames>
+			<PropertyValues>AA_Retail_01_png||Image</PropertyValues>
+		</RetailHero_AA>
+
+		<Modal_AgeGate>
+			<PropertyNames>ObjectIdentifier||ObjectType</PropertyNames>
+			<PropertyValues>1||Article</PropertyValues>
+		</Modal_AgeGate>
+
+<!-- test objects ZIP code enter -->
+
+		<txtZip>
+			<PropertyNames>idStr||ObjectType</PropertyNames>
+			<PropertyValues>zip-input||Textbox</PropertyValues>
+		</txtZip>
+
+<!-- test objects Search Button -->
+		
+		<btnSearch>
+			<PropertyNames>ObjectIdentifier</PropertyNames>
+			<PropertyValues>SEARCH</PropertyValues>
+		</btnSearch>		
+		
+<!-- test objects Store Select Button -->
+		
+		<btnStore>
+			<PropertyNames>contentText</PropertyNames>
+			<PropertyValues>SELECT STORE</PropertyValues>
+		</btnStore>		
+		
+		<DateOfWeek>
+			<PropertyNames> Name </PropertyNames>
+			<PropertyValues>TextNode(5)</PropertyValues>	
+		</DateOfWeek> 
+		
+		<TimeSlot>
+			<PropertyNames> Name </PropertyNames>
+			<PropertyValues>TextNode(8)</PropertyValues>	
+		</TimeSlot> 
+		
+		<btnNext>
+			<PropertyNames>ObjectIdentifier</PropertyNames>
+			<PropertyValues>NEXT</PropertyValues>
+		</btnNext>
+		
+		<btnConfirm>
+			<PropertyNames>ObjectLabel</PropertyNames>
+			<PropertyValues>CONFIRM</PropertyValues>
+		</btnConfirm>
+		
+		<!-- Author - Atul Sathe -->
+		
+		<!-- Created to verify website contents -->
+		
+		<TxtNdVerify>
+			<PropertyNames>ObjectIdentifier||ObjectType||contentText</PropertyNames>
+			<PropertyValues>0||TextNode||WHERE TO FIND</PropertyValues>
+		</TxtNdVerify>
+		
+		<TxtIntroIQOS>
+			<PropertyNames>ObjectIdentifier||ObjectType||contentText</PropertyNames>
+			<PropertyValues>0||Panel||INTRODUCING IQOS®</PropertyValues>
+		</TxtIntroIQOS>
+		
+		
+		<!-- Bhumika added the following test objects IQOS Hamburger Menu --> 
+        <btnHznPanel>
+			<PropertyNames>Name||Height||ObjectIdentifier||ObjectType</PropertyNames>
+			<PropertyValues>Panel(0)||21||0||Panel</PropertyValues>
+		</btnHznPanel>
+
+        <btnLogIn>
+			<PropertyNames>contentText||ObjectType</PropertyNames>
+			<PropertyValues>Log In or Sign Up||Link</PropertyValues>
+		</btnLogIn>
+
+        <btnProductGuides>
+			<PropertyNames>contentText||ObjectType</PropertyNames>
+			<PropertyValues>Product Guides||Link</PropertyValues>
+		</btnProductGuides>
+
+        <btnMeetIQOS>
+			<PropertyNames>contentText||ObjectType</PropertyNames>
+			<PropertyValues>Meet IQOS®||Link</PropertyValues>
+		</btnMeetIQOS>
+	
+</ObjectRepository>
+

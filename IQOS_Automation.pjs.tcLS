@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="data">
+			<Node name="{24b6fa0b-0143-461a-9758-aeb9e9a9428b}">
+				<Prp name="default project" type="S" value="{40A0888F-B755-42C5-8C24-A4563BC02A5D}"/>
+			</Node>
+			<Node name="{40a0888f-b755-42c5-8c24-a4563bc02a5d}">
+				<Prp name="relpath" type="S" value="IQOS_Automation.mds.tcLS"/>
+			</Node>
+			<Node name="envmngrlogs">
+				<Prp name="key" type="S" value="{1D2F7686-C95A-4188-9AF4-86078CFBFA10}"/>
+			</Node>
+			<Node name="logs">
+				<Prp name="key" type="S" value="{6A6A666B-87F0-4C61-A1CC-700C37F74A1C}"/>
+				<Prp name="relpath" type="S" value="Log"/>
+			</Node>
+			<Node name="variables"/>
+		</Node>
+		<Prp name="signature" type="S" value="{71078212-FAEB-4856-A901-B237C89E6B5C}"/>
+	</Node>
+</Nodes>

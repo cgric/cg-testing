@@ -1,0 +1,27 @@
+﻿'Author :- Prashant Pukale
+'USEUNIT CommonUtil
+
+Function VerifyIsLoggedIn(testObject)
+
+  res = IsElementPresent(testObject)  
+  VerifyIsLoggedIn = res
+
+End Function
+
+'Sasie created this function to verify the Alt Text on the images
+Function FindingObjects(propInputs)
+
+'  a = Split(propInputs,",",-1)
+'  propName = a(LBound(a))
+'  Log.Message propName
+'  propValue = a(LBound(a)+1)
+'  Log.Message propValue
+'  propType = a(UBound(a))
+'  Log.Message propType
+  Set page = Sys.Browser("*").Page("*")
+  Set testObject = page.Find(srcset,"/content/dam/gtc/pmusa/iqos/sgw/IQOS_SGW_Desktop_Framework_AA_Q2.png",100)
+  'Set testObject = page.NativeWebObject.Find(propName,propValues,proptype)
+  Sys.HighlightObject testObject, 10
+  FindingObjects = testObject
+
+End Function

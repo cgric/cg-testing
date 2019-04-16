@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Root signature="{24B6FA0B-0143-461A-9758-AEB9E9A9428B}" version="14.0" key="{C974E9C3-5D6F-48E2-863D-947A5EFE4B9A}">
+	<children>
+		<child name="IQOS_Automation" key="{40A0888F-B755-42C5-8C24-A4563BC02A5D}" path="IQOS_Automation.mds" />
+	</children>
+	<testItems key="{9864F98F-0DBC-42A1-840C-2515A1260B18}">
+		<children>
+			<testItem key="{40A0888F-B755-42C5-8C24-A4563BC02A5D}" enabled="True" timeout="0" stopOnError="True" description="" />
+		</children>
+	</testItems>
+	<variables key="{891955C2-DE01-4BB3-B69D-9C29C1CBDD01}">
+		<data Version="3" />
+	</variables>
+	<analysis key="{4D068430-109C-4F11-86B5-57C75379DB29}" />
+	<scc key="{00000000-0000-0000-0000-000000000000}" name="">
+		<data />
+	</scc>
+	<extender key="{1A3FC97E-9A66-4716-B166-35D10B4146E0}">
+		<CrossBrowserTesting Enable="True" />
+	</extender>
+</Root>

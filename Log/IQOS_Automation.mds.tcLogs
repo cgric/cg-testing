@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE Nodes [
+
+<!ENTITY % NameValue "CDATA">
+<!ENTITY % PropType "(I|S|D|L|H|B)">
+<!ENTITY % VersionValue "CDATA">
+
+<!ELEMENT Prp (#PCDATA)>
+<!ELEMENT Node (Node|Prp)*>
+<!ELEMENT Nodes (Node)+>
+
+<!ATTLIST Nodes version CDATA "1">
+
+<!ATTLIST Node name CDATA #REQUIRED>
+
+<!ATTLIST Prp name CDATA #REQUIRED>
+<!ATTLIST Prp type CDATA #REQUIRED>
+<!ATTLIST Prp value CDATA #REQUIRED>
+]>
+<Nodes version="1">
+	<Node name="root">
+		<Node name="folders"/>
+		<Node name="logs">
+			<Node name="log idx=0000">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43550.8919448611"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{4E320387-92B2-4360-ADF2-327B8AA6A985}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="3_26_2019_9_24 PM_24_36\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0001">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43559.4904060995"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{3E6398BB-15D2-4CCD-ADA4-43DAC2428F46}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_4_2019_11_46 AM_11_87\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0002">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43560.6453153819"/>
+				<Prp name="description" type="S" value="IQOS_Automation"/>
+				<Prp name="key" type="S" value="{F57974E6-B92E-4837-97AB-1A68CDF5255B}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_5_2019_3_29 PM_15_249\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0003">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43570.6520994097"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{6DE292B9-59A2-4FAB-B1A2-BCBDBDE5E219}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_15_2019_3_39 PM_01_389\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0004">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43570.6772855324"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{60B3B9BF-38A1-41DD-9FA2-2528658057F6}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_15_2019_4_15 PM_17_470\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0005">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43570.6848193866"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{856051A5-9533-4777-9FDD-D5C2653D854D}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_15_2019_4_26 PM_08_395\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0006">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43570.689202963"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{CCAD3AC0-E650-4661-8BFF-C1D1980F6557}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_15_2019_4_32 PM_27_137\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0007">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43570.6917394792"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{0554F852-43A7-484C-A0A5-66AB7A005DED}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_15_2019_4_36 PM_06_291\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0008">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43570.6987244907"/>
+				<Prp name="description" type="S" value="IQOS_Automation"/>
+				<Prp name="key" type="S" value="{89F46553-BD31-4BA3-A872-CE1E71DA8CCD}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_15_2019_4_46 PM_09_796\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0009">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43571.4756767708"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{F72978F8-F164-477B-9D33-D193D8DB7338}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_16_2019_11_24 AM_58_473\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0010">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43571.4773901736"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{8FFC73BE-520C-4D17-9E11-CE37CCDAE33D}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_16_2019_11_27 AM_26_511\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0011">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43571.4845054282"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{73636375-4F5E-4AC5-AA48-C399D0886C0D}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_16_2019_11_37 AM_41_269\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0012">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43571.4857787268"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{2D471CCB-21DB-4C7F-B320-D6BBCE8369B8}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_16_2019_11_39 AM_31_282\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0013">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43571.4873059606"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{D65E5B63-1421-4CA2-A905-8605297DE5BB}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_16_2019_11_41 AM_43_235\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0014">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43571.4940393519"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{83507780-F8C8-4C8B-ADAD-7DAC9822AE13}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_16_2019_11_51 AM_25_0\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0015">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43571.4961063194"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{43355916-A9FA-4C12-AEE8-10CFA065681E}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_16_2019_11_54 AM_23_586\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0016">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43571.5015904051"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{52CC99A1-9B64-4638-BD69-62609869EABF}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_16_2019_12_02 PM_17_411\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0017">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43571.5577537037"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{5C2A32F1-4B4D-4EA3-B5CF-661FF0A8B933}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_16_2019_1_23 PM_09_920\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0018">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="43571.5597421644"/>
+				<Prp name="description" type="S" value="IQOS_Automation"/>
+				<Prp name="key" type="S" value="{B48F6D76-084E-414E-ADB0-5D4B26E229D5}"/>
+				<Prp name="nameofroot" type="S" value="IQOS_Automation"/>
+				<Prp name="relpath" type="S" value="4_16_2019_1_26 PM_01_723\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+		</Node>
+		<Prp name="signature" type="S" value="{681DCC69-A39F-4C4D-8E7D-B2D9362FAF4F}"/>
+		<Prp name="version" type="S" value="11.0"/>
+	</Node>
+</Nodes>

@@ -1,0 +1,350 @@
+﻿'Author :- Prashant Pukale
+'USEUNIT ObjectRepositoryUtil
+'USEUNIT PerformOperation
+'USEUNIT GlobalVariables
+
+Function killProcess(processName)
+On error Resume Next
+  Dim objWMIService, objProcess, colProcess
+  Dim strComputer, strProcessKill 
+  strComputer = "."
+  strProcessKill = processName 
+  
+  Set objWMIService = GetObject("winmgmts:" _
+  & "{impersonationLevel=impersonate}!\\" _ 
+  & strComputer & "\root\cimv2")
+  
+  Set colProcess = objWMIService.ExecQuery _
+  ("Select * from Win32_Process Where Name = " & strProcessKill )
+  
+  For Each objProcess In colProcess
+  	objProcess.Terminate()
+  Next 
+  On error Goto 0
+
+End Function
+
+Function LaunchBrowser(url)
+
+  Log.Message "which Browser :- "&BROWSERNAME
+  If (BROWSERNAME="IE") Then
+    Browsers.Item(btIExplorer).Run url  
+    Log.Message "Created Browser Instance and navigated to URL ::: "&url 
+    Call createBrowSerParent
+    LaunchBrowser = True
+  ElseIf (BROWSERNAME="Chrome") Then
+    Browsers.Item(btChrome).Run url
+    Log.Message "Created Browser Instance and navigated to URL ::: "&url
+    Call createBrowSerParent
+    LaunchBrowser = True
+  ElseIf (BROWSERNAME = "Firefox") Then
+    Browsers.Item(btFirefox).Run url
+    Log.Message "Created Browser Instance and navigated to URL ::: "&url
+    Call createBrowSerParent
+    LaunchBrowser = True
+  ElseIf (BROWSERNAME = "Edge") Then
+    Browsers.Item(btEdge).Run url
+    Log.Message "Created Browser Instance and navigated to URL ::: "&url
+    Call createBrowSerParent
+    LaunchBrowser = True
+  Else
+    Log.Error "Invalid Browser Selection", "BrowserName"&BrowserName
+    LaunchBrowser = False
+  End If
+
+End Function
+
+'Sasie updated this function to concatenate the browser name against each browser page title to match the output
+Function VerifyTitle(expectedTitle)
+
+  If (BROWSERNAME = "IE") Then
+    expectedTitle = expectedTitle&" - Internet Explorer"
+  ElseIf (BROWSERNAME = "Chrome") Then
+    expectedTitle = expectedTitle&" - Google Chrome"
+  ElseIf (BROWSERNAME = "Firefox") Then
+    expectedTitle = expectedTitle&" - Mozilla Firefox"
+  ElseIf (BROWSERNAME = "Edge") Then
+    expectedTitle = expectedTitle&" - Microsoft Edge"
+  End If
+
+  actTitle = Sys.Browser("*").BrowserWindow(0).WndCaption
+  If(expectedTitle=actTitle) Then 
+    Log.Message "Title as Expected ::: "&actTitle
+    VerifyTitle = True
+  Else 
+    Log.Error "Title is not as Expected ::: Expected :"&expectedTitle&"; Actual Title : "&actTitle
+    VerifyTitle = False
+  End If
+    
+End Function
+
+'Sasie created this function to invoke the browser back functionality
+Function BrowserBack()
+
+  Sys.Browser("*").Page("*").Keys("~[Left]")
+  Log.Message "Page navigated to previous visited page"
+  aqUtils.Delay 5000
+  BrowserBack = True
+
+End Function
+
+
+Function Click(testObject)
+
+  testObject.Click
+  Log.Message "Clicked on the specified control"
+  aqUtils.Delay 5000
+  Click = True
+
+End Function
+
+
+Function SetText(testObject, value)
+
+  testObject.SetText value
+  Log.Message "Entered value into textbox"
+  SetText = True
+  
+End Function
+
+
+Function IsElementPresent(testObject)
+
+  If(testObject.Exists) Then  
+    Log.Message "specified element present"
+    IsElementPresent = True
+  Else 
+    Log.Error "specified element not present"
+    IsElementPresent = False    
+  End If  
+
+End Function
+
+'Sasie updated this function to provide the output message about this function
+Function CloseBrowser()
+
+  Sys.Browser("*").Page("*").Close
+  Log.Message "The browser window is closed"
+  CloseBrowser = True
+  
+End Function
+
+'Sasie updated this function to invoke the browser page refresh feature
+Function RefreshBrowser()
+
+  Sys.Browser("*").Page("*").Keys("[F5]")
+  Log.Message "The browser page is refreshed"
+  aqUtils.Delay 5000
+  RefreshBrowser = True
+
+End Function
+
+'Sasie created this function to navigate the browser to the provided url
+Function BrowserNav(url)
+
+  Browsers.CurrentBrowser.Navigate(url)
+  Log.Message "The current browser instance is navigated to: "&url
+  aqUtils.Delay 5000
+  BrowserNav = True
+
+End Function
+
+'Sasie created this function to compare the images and provide the differences in output
+Function VerifyImage(testObject, imgExp)
+
+  a = Split(imgExp,"||",-1)
+  If a(LBound(a)) <> a(UBound(a))Then
+    imgExp1 = a(LBound(a))
+    imgExp1AltTxt = a(LBound(a)+1)
+    outerHTMLTxt = a(UBound(a))
+  Else
+    If a(LBound(a)) = a(UBound(a)) Then
+      imgExp1 = a(LBound(a))
+      imgExp1AltTxt = NULL
+    End If
+  End If
+  strCurrentFolder = aqFileSystem.GetCurrentFolder
+  imgExpPath = strCurrentFolder&imgExp1
+  Set imageExp = Utils.Picture
+  If InStr(imgExp1,"SGW") Then
+    Set imageAct = Sys.Browser("*").Page("*").Panel(0).Panel(0).Panel(0).Panel(0).Panel(0).Panel(0).Panel(0).Panel(0).Section(0).Panel(0).Panel(3).Panel(0).Image(0)
+    'imgAct = imageAct.outerHTML
+    'Set page = Sys.Browser("*").Page("*")
+    'Set imgAct1 = objParent.FindChild("source srcset" ,"/content/dam/gtc/pmusa/iqos/sgw/IQOS_SGW_Desktop_Framework_AA_Q2.png",1000)
+    'Set imgAct1 = objParent.FindChild("outerHTML",outerHTMLTxt,10000)
+    'Set imgAct2 = objParent.FindChild("currentSrc",currentSrcTxt,10000)
+    'Set imgAct1 = objParent.NativeWebObject.Find("src","*"&"IQOS_SGW_Desktop_Framework_AA_Q2.png","img")
+  Else
+    If IsEmpty(testObject) Then
+      Set imageAct = objParent.FindChild("outerHTML",outerHTMLTxt,10000)
+    Else
+      Set imageAct = testObject
+    End If
+  End If
+  imageExp.LoadFromFile(imgExpPath)
+  'waitFunc(imageAct)
+  Sys.HighlightObject imageAct, 10
+  Log.Picture imageExp, "Expected Image"
+  Log.Picture imageAct, "Actual Image"
+  Set ResultImage = imageExp.Difference(imageAct,,,False)
+  If ResultImage Is Nothing Then
+    Log.Message "The compared images are identical"
+    VerifyImage = True
+    If IsNull(imgExpAltTxt) Then
+      imageActAlt = imageAct.alt
+      obj = VerifyAltText(imageActAlt,imageAct)
+    End If
+  Else
+    Log.Error "The compared images are not matching",,,,ResultImage
+    VerifyImage = False
+  End If
+  
+End Function
+
+'Sasie created this function to verify the current page is AA or AV
+Function IsLoggedIn()
+
+  Set page = Sys.Browser("*").Page("*")
+  pageurl = page.URL
+  If InStr(pageurl,"ageaffirmed") <> 0 Then
+    Log.Message "The user is not Logged in"
+    IsLoggedIn = True
+  Else
+    Log.Message "The user is Logged in"
+    IsLoggedIn = False
+  End If
+
+End Function
+
+'Sasie created this function to verify the Alt Text on the images
+Function VerifyAltText(imageActAlt,imageAltExp)
+
+  If imageActAlt = imageAltExp Then
+    Log.Message "The alt text of the image is '"&imageActAlt&"', and it is matching"
+    VerifyAltText = True
+  Else
+    Log.Error "The alt test of the image is not matching. Expected - '"&imageAltExp&"' but the Actual - '"&imageActAlt&"'"
+    VerifyAltText = False
+  End If
+
+End Function
+
+'Sasie created this function to verify the Alt Text on the images
+Function waitFunc(testObject)
+
+  While Not testObject.Exists
+    aqUtils.Delay 1000
+  Wend
+
+End Function
+
+'Author :- Atul Sathe
+' Created to verify the website content with input file content
+
+Function VerifyText(testObject, value)
+
+  Dim pp
+  If IsEmpty(testObject) Then
+    valuearray = Split(value,"||",-1)
+    valueTxt = valuearray(0)
+    outerHTMLVal = valuearray(1)
+    Set textAct = objParent.FindChild("outerHTML",outerHTMLVal,10000)
+    'waitFunc(textAct)
+    Sys.HighlightObject textAct, 10
+    pp = aqConvert.VarToStr(textAct.innerText)
+    'MsgBox "Expected: "&Len(valueTxt)&vbNewLine&"Actual: "&Len(pp)
+    'MsgBox Asc(Right(pp,1))
+    'MsgBox "Expected:"&vbNewLine&valueTxt&vbNewLine&vbNewLine&"Actual:"&vbNewLine&pp
+    If Asc(Right(pp,1)) = 10 Then
+      pp = Left(pp,Len(pp)-1)
+    End If
+    If StrComp(valueTxt,pp,1) = 0 Then
+      VerifyText = True
+      Log.Message "Content '"&pp&"' is matched"
+    Else
+      VerifyText = False
+      Log.Error "Content is not matched, Expected :: "&valueTxt&" and the Actual :: "&pp
+    End If
+  Else
+    'waitFunc(testObject)
+    Sys.HighlightObject testObject, 10
+    pp = aqConvert.VarToStr(testObject.innerText)
+    'MsgBox "Expected: "&Len(value)&vbNewLine&"Actual: "&Len(pp)
+    'MsgBox Asc(Right(pp,1))
+    'MsgBox Left(pp,Len(pp)-1)
+    'MsgBox "Expected:"&vbNewLine&value&vbNewLine&vbNewLine&"Actual:"&vbNewLine&pp
+    If Asc(Right(pp,1)) = 10 Then
+      pp = Left(pp,Len(pp)-1)
+    End If
+    If StrComp(value,pp,1) = 0 Then
+      VerifyText = True
+      Log.Message "Content '"&pp&"' is matched"
+    Else
+      VerifyText = False
+      Log.Error "Content is not matched, Expected :: "&value&" and the Actual :: "&pp
+    End If
+  End If
+
+End Function
+
+
+'Author :- Atul Sathe
+' Created to verify the website content with input file content using html tag.
+
+Function VerifyFileTxt(value) 
+
+  Dim context,page
+  Set page = Sys.Browser("*").Page("*")
+  Set context = page.NativeWebObject.Find("class", "contentHeading", "div")
+  pp = context.textContent
+  If(value = pp) Then
+    VerifyFileTxt = true
+    Log.Message "Content Matched"
+  Else
+    VerifyFileTxt = False
+    Log.Error "Content not matched"
+  End If
+
+End Function
+
+
+'Bhumika created this function to verify the LogIn Button in Hamburger Menu on IQOS Home Page
+Function VerifyLogIn_HorizontalMenu()
+
+     currentURL = sys.browser("*").page("*").URL
+     Log.Message "Current Page is  "&currentURL
+     If InStr(currentURL,"gtc.insightsc3m.com/iqos/Security/login") <>0 Then
+        Log.Message "The LogIn Button in Horizontal Menu Verified"
+     Else
+        Log.Message "The LogIn Button in Horizontal Menu Verified" 
+     End If
+
+End Function
+
+
+'Bhumika created this function to verify the Product Guides Button in Hamburger Menu on IQOS Home Page
+Function VerifyProductGuides_HorizontalMenu()
+
+     currentURL = sys.browser("*").page("*").URL
+     Log.Message "Current Page is  "&currentURL
+     If InStr(currentURL,"home/product-guides/whats-in-the-box.html") <>0 Then
+        Log.Message "The Product Guides Button in Horizontal Menu Verified"
+     Else
+        Log.Message "The Product Guides Button in Horizontal Menu Verified" 
+     End If
+
+End Function
+
+
+'Bhumika created this function to verify the Meet IQOS Button in Hamburger Menu on IQOS Home Page
+Function VerifyMeetIQOS_HorizontalMenu()
+
+     currentURL = sys.browser("*").page("*").URL
+     Log.Message "Current Page is  "&currentURL
+     If InStr(currentURL,"home/meet-iqos/meet-iqos.html") <>0 Then
+        Log.Message "The Meet IQOS Button in Horizontal Menu Verified"
+     Else
+        Log.Message "The Meet IQOS Button in Horizontal Menu Verified" 
+     End If
+
+End Function
